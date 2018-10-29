@@ -1,0 +1,35 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  color: white;
+  padding: 3em;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+#locationSearch {
+  margin-bottom: 1em;
+  width: 18em;
+  border-radius: 5px;
+}
+#artistSearch {
+  margin-bottom: .5em;
+  width: 18em;
+  border-radius: 5px;
+}
+#startDate {
+  border-radius: 5px;
+}
+#endDate {
+  border-radius: 5px;
+}
+
+button {
+padding: 1em;
+width: 200px;
+border-radius: 5px;
+}
