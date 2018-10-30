@@ -1,19 +1,21 @@
 <div class="container">
   <div class="sound-icon">
-    <img src="../assets/sound.png">
+    <img src="../assets/waves.png">
   </div>
     <div class="search">
-      <input id="locationSearch" type="text" placeholder=" search city..."><br>
-      <input id="artistSearch" type="text" placeholder=" search artist..."><br>
+      <input id="locationSearch" type="text" placeholder=" search city . . ."><br>
+      <input id="artistSearch" type="text" placeholder=" search artist . . ."><br>
       <p>start date: <input id="startDate" type="date"></p>
       <p>end date: <input id="endDate" type="date"></p>
       <button id="go" (click)="getConcerts()" type="button"><img src="../assets/horns.png"></button>
     </div>
+    <!-- <div id="results">
+      <p>Test artist card</p>
+      <img id="listen" src="../assets/play2.png" (click)="getPlaylist()">
+      <p>currentResult.title</p>
+      <p>currentResult.venueAddress</p>
+      <p>currentResult.cityName</p>
+      <p>currentResult.regionAbbr</p>
+      <p>currentResult.postalCode</p>
+    </div> -->
 </div>
-<!-- <div *ngFor="let currentResult of results | async" id="results">
-  <h2>currentResult.title</h2>
-  <p>currentResult.venueAddress</p>
-  <p>currentResult.cityName</p>
-  <p>currentResult.regionAbbr</p>
-  <p>currentResult.postalCode</p>
-</div> -->
