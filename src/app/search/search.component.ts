@@ -10,7 +10,6 @@ import { Result } from '../models/result.model';
   providers: [ConcertService, SpotifyService]
 })
 export class SearchComponent  {
-
   location: string;
   artist: string;
   artistsList: Result[] = [];
@@ -19,7 +18,10 @@ export class SearchComponent  {
   constructor(private concertService: ConcertService, private spotifyService: SpotifyService) {
   }
 
+  private showSearch = true;
+
   getConcerts() {
+
   this.location = document.getElementById('locationSearch').value;
   this.artist = document.getElementById('artistSearch').value;
   this.startDate = document.getElementById('startDate').value;
@@ -38,6 +40,7 @@ export class SearchComponent  {
 
   test.then(response => {
     let body = JSON.parse(response);
+
     body.events.event.forEach((event, i) => {
       this.artistsList.push(
         new Result(event.title, event.venue_address, event.city_name, event.region_abbr, event.postal_code, event.start_time);
