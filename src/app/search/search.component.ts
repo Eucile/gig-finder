@@ -17,7 +17,7 @@ export class SearchComponent  {
 
 
   constructor(private concertService: ConcertService) {
-  // title = result.title;
+
   }
 
   getConcerts() {
@@ -35,7 +35,6 @@ export class SearchComponent  {
         this.dateRange = this.startDate + "00" + "-" + this.endDate + "00";
       }
   const test = this.concertService.onClickMe(this.location, this.artist, this.dateRange);
-
 
   console.log(this.dateRange);
   test.then(response => {

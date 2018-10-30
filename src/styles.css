@@ -2,4 +2,6 @@ body {
   background-image: url(./assets/landing-image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1em;
 }
