@@ -15,7 +15,6 @@ export class SearchComponent  {
   artistsList: Result[] = [];
   title = 'app';
 
-
   constructor(private concertService: ConcertService) {
 
   }

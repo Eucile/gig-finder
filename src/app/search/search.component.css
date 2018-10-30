@@ -4,6 +4,12 @@
   justify-content: center;
   align-items: center;
 }
+.sound-icon {
+  position: absolute;
+  top: 20px;
+  margin: 0 auto;
+}
+
 p {
 
   color: #d8d8d8;
@@ -77,7 +83,7 @@ p {
 }
 
 button {
-  box-shadow: 0px 10px 10px rgba(0,0,0, .8);
+  box-shadow: 0px 10px 5px rgba(0,0,0, .8);
   font-size: 16px;
   cursor: crosshair;
   background: #415a71;
