@@ -1,13 +1,27 @@
 <div class="sound-icon">
   <img src="../assets/waves.png">
 </div>
+
+<div *ngIf="this.showSpin" class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+
 <div class="container">
     <div *ngIf="this.showSearch" class="search">
       <input id="locationSearch" type="text" placeholder=" search city . . ."><br>
       <input id="artistSearch" type="text" placeholder=" search artist . . ."><br>
       <p>start date: <input id="startDate" type="date"></p>
       <p>end date: <input id="endDate" type="date"></p>
-      <button id="go" (click)="getConcerts()" (click)="this.showSearch = false" type="button"><img src="../assets/horns.png"></button>
+      <button id="go" (click)="getConcerts()" (click)="this.showSearch = false" (click)="showSpin()" type="button"><img src="../assets/horns.png"></button>
     </div>
     <div class="flex-container">
       <div *ngFor="let result of artistsList" class="artist-card">
@@ -19,7 +33,6 @@
           {{result.regionAbbr}} {{result.postalCode}}</li>
         </ul>
         <div class="spotify-box">
-          
         </div>
       </div>
     </div>

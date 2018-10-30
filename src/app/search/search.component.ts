@@ -22,9 +22,10 @@ export class SearchComponent  {
   }
 
   private showSearch = true;
+  private showSpin = false;
+
 
   getConcerts() {
-
     this.location =(<HTMLInputElement> document.getElementById('locationSearch')).value;
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;
     this.startDate = (<HTMLInputElement> document.getElementById('startDate')).value;
@@ -48,16 +49,18 @@ export class SearchComponent  {
         this.artistsList.push(
           new Result(event.title, event.venue_address, event.city_name, event.region_abbr, event.postal_code, event.start_time)
         );
-          this.spotifyService.getToken().subscribe(res => {
-            this.spotifyService.searchMusic(res.access_token, event.title).subscribe(res => {
-              console.log(res.artists.items[0].external_urls.spotify);
-            })
+        this.spotifyService.getToken().subscribe(res => {
+          this.spotifyService.searchMusic(res.access_token, event.title).subscribe(res => {
+            console.log(res.artists.items[0].external_urls.spotify);
           })
+        })
       }).then(() => {
         this.concertService.getResults(this.artistsList);
       });
     }, function(error) {
       console.log(error)
+
+
     });
   }
 }
