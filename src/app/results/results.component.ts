@@ -10,11 +10,4 @@ import { SpotifyService } from '../spotify.service';
 export class ResultsComponent {
   constructor(private spotifyService: SpotifyService) { }
 
-  getArtists() {
-    this.spotifyService.getToken().subscribe(res => {
-      this.spotifyService.searchMusic(res.access_token).subscribe(res => {
-        console.log(res);
-      })
-    })
-  }
 }

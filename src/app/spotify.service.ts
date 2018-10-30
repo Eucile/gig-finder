@@ -18,10 +18,6 @@ export class SpotifyService {
 
   }
 
-  getTitle(artistsList) {
-    console.log(artistsList);
-  }
-
   getToken(){
 
     let params = ('grant_type=client_credentials');
@@ -36,9 +32,9 @@ export class SpotifyService {
   }
 
 
-  searchMusic(token:string){
+  searchMusic(token: string, artist: string){
 
-    this.searchUrl = `https://api.spotify.com/v1/search?query=prince&offset=0&limit=1&type=artist`;
+    this.searchUrl = `https://api.spotify.com/v1/search?query=${artist}&offset=0&limit=1&type=artist`;
     let headers = new Headers();
     headers.append('Authorization' , 'Bearer ' + token);
     return this.http.get(this.searchUrl , {headers : headers})
