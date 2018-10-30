@@ -16,7 +16,6 @@ export class SearchComponent  {
   title = 'app';
 
   constructor(private concertService: ConcertService) {
-
   }
 
   getConcerts() {
