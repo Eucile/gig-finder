@@ -38,7 +38,6 @@ export class SearchComponent  {
   console.log(this.dateRange);
   test.then(response => {
     let body = JSON.parse(response);
-    // console.log(body.events.event);
     body.events.event.forEach((event, i) => {
       this.artistsList.push(
           new Result(body.events.event[i].title, body.events.event[i].venue_address, body.events.event[i].city_name, body.events.event[i].region_abbr, body.events.event[i].postal_code, body.events.event[i].start_time);

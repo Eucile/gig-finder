@@ -3,7 +3,6 @@ import { Result } from './models/result.model'
 
 @Injectable()
 export class ConcertService {
-
 concertResults: Result[] = [];
 
 getResults(results) {
