@@ -9,12 +9,17 @@
       <p>end date: <input id="endDate" type="date"></p>
       <button id="go" (click)="getConcerts()" type="button"><img src="../assets/horns.png"></button>
     </div>
-      <ul *ngFor="let result of artistsList" class="results">
-        <li>Test artist card</li>
-        <li>{{result.title}}</li>
-        <li>{{result.venueAddress}}</li>
-        <li>{{result.cityName}}</li>
-        <li>{{result.regionAbbr}}</li>
-        <li>{{result.postalCode}}</li>
-      </ul>
+</div>
+<div class="flex-container">
+  <div *ngFor="let result of artistsList" class="artist-card">
+    <ul class="results">
+
+        <!-- <img src="{{result.image.small.url}}"> -->
+
+      <li>{{result.title}}</li>
+      <li>{{result.venueAddress}}</li>
+      <li>{{result.cityName}},
+      {{result.regionAbbr}} {{result.postalCode}}</li>
+    </ul>
+  </div>
 </div>

@@ -15,7 +15,6 @@ export class SearchComponent  {
   title = 'app';
 
   constructor(private concertService: ConcertService) {}
-
   getConcerts() {
   this.location = document.getElementById('locationSearch').value;
   this.artist = document.getElementById('artistSearch').value;
