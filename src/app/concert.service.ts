@@ -13,8 +13,6 @@ getResults(results) {
   constructor() { }
 
   onClickMe(location, artist, dateRange) {
-    // console.log(artist);
-    // console.log(location);
 
     return new Promise(function(resolve, reject) {
       const request = new XMLHttpRequest();
