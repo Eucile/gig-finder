@@ -9,16 +9,12 @@ import { Result } from '../models/result.model';
   providers: [ConcertService]
 })
 export class SearchComponent  {
-
   location: string;
   artist: string;
   artistsList: Result[] = [];
   title = 'app';
 
-
-  constructor(private concertService: ConcertService) {
-  // title = result.title;
-  }
+  constructor(private concertService: ConcertService) {}
 
   getConcerts() {
   this.location = document.getElementById('locationSearch').value;
