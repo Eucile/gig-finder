@@ -104,10 +104,17 @@ button #listen {
   background: none;
   border: hidden;
 }
-
-#results {
-  background: black;
+/* .back-drop {
   position: absolute;
+  background: black;
+  color: white;
+  width: 60vw;
+  height: 100vh;
+  padding: 3em;
+} */
+.results {
+  background: black;
+  color: white;
   width: 60vw;
   height: 100vh;
   padding: 3em;

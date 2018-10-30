@@ -9,13 +9,12 @@
       <p>end date: <input id="endDate" type="date"></p>
       <button id="go" (click)="getConcerts()" type="button"><img src="../assets/horns.png"></button>
     </div>
-    <!-- <div id="results">
-      <p>Test artist card</p>
-      <img id="listen" src="../assets/play2.png" (click)="getPlaylist()">
-      <p>currentResult.title</p>
-      <p>currentResult.venueAddress</p>
-      <p>currentResult.cityName</p>
-      <p>currentResult.regionAbbr</p>
-      <p>currentResult.postalCode</p>
-    </div> -->
+      <ul *ngFor="let result of artistsList" class="results">
+        <li>Test artist card</li>
+        <li>{{result.title}}</li>
+        <li>{{result.venueAddress}}</li>
+        <li>{{result.cityName}}</li>
+        <li>{{result.regionAbbr}}</li>
+        <li>{{result.postalCode}}</li>
+      </ul>
 </div>
