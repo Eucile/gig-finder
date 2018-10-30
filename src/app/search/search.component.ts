@@ -13,9 +13,11 @@ export class SearchComponent  {
   artist: string;
   artistsList: Result[] = [];
   title = 'app';
+  private showSearch = true;
 
   constructor(private concertService: ConcertService) {}
   getConcerts() {
+
   this.location = document.getElementById('locationSearch').value;
   this.artist = document.getElementById('artistSearch').value;
   this.startDate = document.getElementById('startDate').value;

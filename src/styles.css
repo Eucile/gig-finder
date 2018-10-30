@@ -1,7 +1,7 @@
 body {
   background-image: url(./assets/landing-image.jpg);
   background-repeat: no-repeat;
-  background-position: absolute;
+  background-attachment: fixed;
   background-size: 2500px;
   background-color: black;
 }

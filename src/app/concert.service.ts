@@ -15,6 +15,7 @@ getResults(results) {
   onClickMe(location, artist, dateRange) {
     // console.log(artist);
     // console.log(location);
+
     return new Promise(function(resolve, reject) {
       const request = new XMLHttpRequest();
       const url = `http://api.eventful.com/json/events/search?app_key=9QjpCR7G5fwBCkmc&location=${location}&date=${dateRange}&category=music&q=${artist}`;
