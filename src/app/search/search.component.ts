@@ -19,7 +19,6 @@ export class SearchComponent  {
   artistsList: Result[] = [];
   constructor(private concertService: ConcertService, private spotifyService: SpotifyService) {
   }
-
   private showSearch = true;
   private showSpin = false;
 
