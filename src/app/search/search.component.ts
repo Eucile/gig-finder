@@ -30,35 +30,53 @@ export class SearchComponent  {
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;
     this.startDate = (<HTMLInputElement> document.getElementById('startDate')).value;
     this.endDate = (<HTMLInputElement> document.getElementById('endDate')).value;
-    let dateRange;
-    if(this.endDate != "" ) {
-      this.startDate = this.startDate.split('-').join('');
-      this.endDate = this.endDate.split('-').join('');
-      if (this.endDate == "") {
-        this.dateRange = this.startDate + "00" + "-" + this.startDate + "00";
-      } else {
-        this.dateRange = this.startDate + "00" + "-" + this.endDate + "00";
-      }
+
+    if(this.startDate != "") {
+      this.startDate = this.startDate + "T10:00:00Z";
+      console.log(this.startDate);
     }
-    const test = this.concertService.onClickMe(this.location, this.artist, this.dateRange);
+
+    if(this.endDate != "") {
+      this.endDate = this.endDate + "T10:00:00Z";
+      console.log(this.endDate);
+    }
+
+    const test = this.concertService.onClickMe(this.location, this.artist, this.startDate, this.endDate);
+
 
     test.then(response => {
-      let body = JSON.parse(response);
+      let body = JSON.parse(response.toString());
+      console.log("ticketmaster response = " + response);
 
-      body.events.event.forEach((event, i) => {
-        this.artistsList.push(
-          new Result(event.title, event.venue_address, event.city_name, event.region_abbr, event.postal_code, event.start_time)
-        );
-        this.spotifyService.getToken().subscribe(res => {
-          this.spotifyService.searchMusic(res.access_token, event.title).subscribe(res => {
-            console.log(res.artists.items[0].external_urls.spotify);
+        body._embedded.events.forEach((events, i) => {
+          this.artistsList.push(
+            new Result(events.name, events._embedded.venues[0].name, events._embedded.venues[0].address.line1, events._embedded.venues[0].city.name, events._embedded.venues[0].state.stateCode, events._embedded.attractions[0].name, events.start_time)
+          );
+          this.spotifyService.getToken().subscribe(res => {
+            this.spotifyService.searchMusic(res.access_token, event.title).subscribe(res => {
+              console.log(res.artists.items[0].external_urls.spotify);
+            })
           })
-        })
-      }).then(() => {
-        this.concertService.getResults(this.artistsList);
-      });
-    }, function(error) {
-      console.log(error)
+        }).then(() => {
+          this.concertService.getResults(this.artistsList);
+        });
+      }, function(error) {
+        console.log(error)
+
+    //   body.events.event.forEach((event, i) => {
+    //     this.artistsList.push(
+    //       new Result(event.title, event.venue_address, event.city_name, event.region_abbr, event.postal_code, event.start_time)
+    //     );
+    //     this.spotifyService.getToken().subscribe(res => {
+    //       this.spotifyService.searchMusic(res.access_token, event.title).subscribe(res => {
+    //         console.log(res.artists.items[0].external_urls.spotify);
+    //       })
+    //     })
+    //   }).then(() => {
+    //     this.concertService.getResults(this.artistsList);
+    //   });
+    // }, function(error) {
+    //   console.log(error)
 
 
     });
