@@ -9,6 +9,7 @@ import { Result } from '../models/result.model';
   styleUrls: ['./search.component.css'],
   providers: [ConcertService, SpotifyService]
 })
+
 export class SearchComponent  {
   location: string;
   artist: string;
@@ -24,8 +25,8 @@ export class SearchComponent  {
   private showSearch = true;
   private showSpin = false;
 
-
   getConcerts() {
+    this.showSpin = true;
     this.location =(<HTMLInputElement> document.getElementById('locationSearch')).value;
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;
     this.startDate = (<HTMLInputElement> document.getElementById('startDate')).value;
@@ -55,8 +56,7 @@ export class SearchComponent  {
           this.spotifyService.getToken().subscribe(res => {
             this.spotifyService.searchMusic(res.access_token, event.title).subscribe(res => {
               console.log(res.artists.items[0].external_urls.spotify);
-            })
-          })
+            })          })
         }).then(() => {
           this.concertService.getResults(this.artistsList);
         });
