@@ -17,8 +17,6 @@ export class SearchComponent  {
   endDate: string;
   dateRange: string;
   artistsList: Result[] = [];
-
-
   constructor(private concertService: ConcertService, private spotifyService: SpotifyService) {
   }
 
@@ -46,6 +44,7 @@ export class SearchComponent  {
 
 
     test.then(response => {
+      this.showSpin = false;
       let body = JSON.parse(response.toString());
       console.log("ticketmaster response = " + response);
 
