@@ -1,29 +1,10 @@
 <div class="sound-icon">
-  <img src="../assets/waves.png">
+  <img src="../assets/howl2.png">
 </div>
-
-<!-- <div *ngIf="this.showSpin" class="preloader-wrapper big active" id="spinner">
-    <div class="spinner-layer spinner-blue-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div><div class="gap-patch">
-        <div class="circle"></div>
-      </div><div class="circle-clipper right">
-        <div class="circle"></div>
-      </div>
-    </div>
-  </div> -->
-  <!-- <div *ngIf="this.showSpin" class="progress">
-      <div class="indeterminate"></div>
-  </div> -->
-
-  <!-- <div *ngIf="this.showSpin" id="spinner"  class="lds-ripple"><div></div><div></div></div> -->
 
   <div *ngIf="this.showSpin" id="spinner">
   <div id="loader"></div>
 </div>
-
-
 
 <div class="container">
     <div *ngIf="this.showSearch" class="search">
@@ -41,13 +22,12 @@
           <li>{{result.name}}</li>
           <li>{{result.artistName}}</li>
           <li>{{result.cityName}}
-          {{result.regionAbbr}} {{result.postalCode}}</li>
+          {{result.regionAbbr}}, {{result.postalCode}}</li>
         </ul>
 
           <ul class="spotify-box">
               <li><iframe src="https://open.spotify.com/embed/album/1LINxDMagUFRCw8VYbLBGL" width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
           </ul>
-
 
       </div>
     </div>
