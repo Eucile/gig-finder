@@ -26,6 +26,7 @@ export class SearchComponent  {
 
 
   getConcerts() {
+    this.showSpin = true;
     this.location =(<HTMLInputElement> document.getElementById('locationSearch')).value;
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;
     this.startDate = (<HTMLInputElement> document.getElementById('startDate')).value;
@@ -44,7 +45,7 @@ export class SearchComponent  {
 
     test.then(response => {
       let body = JSON.parse(response);
-
+      this.showSpin = false;
       body.events.event.forEach((event, i) => {
         this.artistsList.push(
           new Result(event.title, event.venue_address, event.city_name, event.region_abbr, event.postal_code, event.start_time)

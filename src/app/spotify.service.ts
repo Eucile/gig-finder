@@ -15,7 +15,6 @@ export class SpotifyService {
 
 
   constructor(private http: Http) {
-
   }
 
   getToken(){

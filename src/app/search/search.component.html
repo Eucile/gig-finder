@@ -2,7 +2,7 @@
   <img src="../assets/waves.png">
 </div>
 
-<div *ngIf="this.showSpin" class="preloader-wrapper big active">
+<div *ngIf="this.showSpin" class="preloader-wrapper big active" id="spinner">
     <div class="spinner-layer spinner-blue-only">
       <div class="circle-clipper left">
         <div class="circle"></div>
@@ -25,14 +25,16 @@
     </div>
     <div class="flex-container">
       <div *ngFor="let result of artistsList" class="artist-card">
-        <ul class="results">
+        <div class="results">
+          <ul>
           <li class="artist-title">{{result.title}}</li>
           <li>{{result.startTime}}</li>
           <li>{{result.venueAddress}}</li>
           <li>{{result.cityName}},
-          {{result.regionAbbr}} {{result.postalCode}}</li>
-        </ul>
-        <div class="spotify-box">
+          {{result.regionAbbr}} {{result.postalCode}}</li></ul>
+          <ul class="spotify-box">
+              <li><iframe src="https://open.spotify.com/embed/album/1LINxDMagUFRCw8VYbLBGL" width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
+          </ul>
         </div>
       </div>
     </div>

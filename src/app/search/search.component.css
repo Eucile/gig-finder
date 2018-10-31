@@ -1,8 +1,10 @@
 .container {
   min-height: 100vh;
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
+}
+#spinner {
+  position: absolute;
+  top: 30%;
+  left: 50%;
 }
 .sound-icon {
   display: flex;
@@ -22,7 +24,7 @@ p {
   padding: 3em;
   font-size: .9em;
   width: 35%;
-  margin: 25% auto;
+  margin: 20% auto;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   font-family: 'Raleway', sans-serif;
@@ -122,6 +124,8 @@ button #listen {
   background: rgba(0, 0, 0, 0.5);
   color: #d8d8d8;
   padding: 3em;
+  display: flex;
+  justify-content: space-between;
 }
 li {
   list-style: none;
