@@ -9,6 +9,7 @@ import { Result } from '../models/result.model';
   styleUrls: ['./search.component.css'],
   providers: [ConcertService, SpotifyService]
 })
+
 export class SearchComponent  {
   location: string;
   artist: string;
@@ -23,7 +24,6 @@ export class SearchComponent  {
 
   private showSearch = true;
   private showSpin = false;
-
 
   getConcerts() {
     this.showSpin = true;

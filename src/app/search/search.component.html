@@ -2,7 +2,7 @@
   <img src="../assets/waves.png">
 </div>
 
-<div *ngIf="this.showSpin" class="preloader-wrapper big active" id="spinner">
+<!-- <div *ngIf="this.showSpin" class="preloader-wrapper big active" id="spinner">
     <div class="spinner-layer spinner-blue-only">
       <div class="circle-clipper left">
         <div class="circle"></div>
@@ -12,7 +12,17 @@
         <div class="circle"></div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <!-- <div *ngIf="this.showSpin" class="progress">
+      <div class="indeterminate"></div>
+  </div> -->
+
+  <!-- <div *ngIf="this.showSpin" id="spinner"  class="lds-ripple"><div></div><div></div></div> -->
+
+  <div *ngIf="this.showSpin" id="spinner">
+  <div id="loader"></div>
+</div>
+
 
 
 <div class="container">
