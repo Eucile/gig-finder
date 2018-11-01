@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ConcertService } from '../concert.service';
 import { SpotifyService } from '../spotify.service';
 import { Result } from '../models/result.model';
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-search',
@@ -10,7 +10,9 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./search.component.css'],
   providers: [ConcertService, SpotifyService]
 })
-export class SearchComponent  {
+export class SearchComponent {
+
+
   location: string;
   artist: string;
   startDate: string;
@@ -18,16 +20,15 @@ export class SearchComponent  {
   dateRange: string;
   artistsList: Result[] = [];
   albumIDs: string[] = [];
-  url: SafeResourceUrl;
-  test: string = '1LINxDMagUFRCw8VYbLBGL';
 
-
-  constructor(private concertService: ConcertService, private spotifyService: SpotifyService, sanitizer: DomSanitizer) {
-    this.url = sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/album/"+ this.test);
-  }
+  constructor(private concertService: ConcertService, private spotifyService: SpotifyService, private sanitizer: DomSanitizer) {}
 
   private showSearch = true;
   private showSpin = false;
+
+  public getSanitzedUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
 
   getConcerts() {
@@ -70,15 +71,20 @@ export class SearchComponent  {
             this.spotifyService.getToken().subscribe(tokenTwo => {
               if (artistInfo.artists.items[0] != undefined) {
                 this.spotifyService.searchAlbum(tokenTwo.access_token, artistInfo.artists.items[0].id).subscribe(artistID => {
-                  //
-                  // this.artistsList[i].albumId = "https://open.spotify.com/embed/album/" + artistID.items[0].id;
-                  // console.log(this.artistsList[i])
+
+                  this.artistsList[i].albumId = "https://open.spotify.com/embed/album/" + artistID.items[0].id;
+
+                 // this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/album/" + artistID.items[0].id);
+
+                  // console.log(this.safeUrl);
+
+                  console.log(this.artistsList[i]);
 
                   // this.artistsList = artistID.items[0].id;
                   // console.log(this.artistsList.title)
-                  //
-                  //
-                  // console.log(this.artistsList);
+
+                  console.log(this.artistsList);
+
                 });
               } else {
                 this.artistsList[i].albumId = 'We did it';
@@ -98,12 +104,3 @@ export class SearchComponent  {
     });
   }
 }
-
-
-// if (artistInfo.artists.items[0] != undefined) {
-//   this.spotifyService.searchAlbum(tokenTwo.access_token, artistInfo.artists.items[0].id).subscribe(artistID => {
-//     this.artistsList[8] = artistID.items[0].id;
-//   });
-// } else {
-//   console.log(this.artistsList[8])
-// }
