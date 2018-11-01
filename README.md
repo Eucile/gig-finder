@@ -1,6 +1,6 @@
 # [Howl](https://howl-music.firebaseapp.com/)
 
-![howl-logo](https://i.imgur.com/LepcNmV.png)
+![howl-logo](https://github.com/Eucile/gig-finder/blob/master/howlreadme.png)
 
 Never miss out on great live music again. Put in your location and time frame, and Howl returns a dynamic list with music from upcoming shows.
 
