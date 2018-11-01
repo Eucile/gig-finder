@@ -52,7 +52,7 @@ exit() {
       }
     }
     // const test = this.concertService.onClickMe(this.location, this.artist, this.dateRange);
-
+    
     const test = this.concertService.onClickMe(this.location, this.artist, this.startDate, this.endDate);
 
     test.then(response => {
