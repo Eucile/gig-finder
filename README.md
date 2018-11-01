@@ -1,4 +1,4 @@
-![howl-logo](https://imgur.com/a/6LswNH5)
+![howl-logo](https://i.imgur.com/LepcNmV.png)
 # Howl
 
 Never miss out on great live music again. Put in your location and time frame, and Howl returns a dynamic list with music from upcoming shows.
