@@ -105,7 +105,6 @@ body {
   animation-iteration-count: infinite;
 }
 
-
 #spinner {
   position: absolute;
   width: 900px;
@@ -201,7 +200,7 @@ button {
   color: #d8d8d8;
   line-height: 1;
   padding: 9px 16px 11px;
-  border: none;
+  border: hidden;
   width: 100%;
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
@@ -245,4 +244,22 @@ li {
 
 .artist-title {
   font-size: 1.5em;
+}
+ #rewind {
+  padding: 1em;
+  color: white;
+  border: hidden;
+  position: absolute;
+  background: none;
+  left: 80%;
+  top: 10%;
+  cursor: crosshair;
+}
+#rewind img {
+  width: 40px;
+}
+.go-back {
+  padding-left: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
 }

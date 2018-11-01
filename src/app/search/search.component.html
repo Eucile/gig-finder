@@ -5,8 +5,9 @@
   <div id="loader"></div>
 </div>
 
+  <div id="rewind" *ngIf="this.showRewind" (click)="exit()"><img class="hvr-pulse" src="../assets/rewind.png" alt=""><span class="go-back">go back</span></div>
+
 <div class="container">
-   <button (click)="exit()">Exit</button>
     <div *ngIf="this.showSearch" class="search">
       <input id="locationSearch" type="text" placeholder=" search city . . ."><br>
       <input id="artistSearch" type="text" placeholder=" search artist . . ."><br>
@@ -24,7 +25,6 @@
           <li>{{result.cityName}}
           {{result.regionAbbr}}, {{result.postalCode}}</li>
         </ul>
-
           <ul class="spotify-box">
               <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
           </ul>
