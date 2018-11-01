@@ -1,5 +1,6 @@
+# [Howl](https://howl-music.firebaseapp.com/)
+
 ![howl-logo](https://i.imgur.com/LepcNmV.png)
-# Howl
 
 Never miss out on great live music again. Put in your location and time frame, and Howl returns a dynamic list with music from upcoming shows.
 
@@ -33,6 +34,11 @@ launch project in your in browser
 ```
 ng serve --open
 ```
+## Languages Used
+
+* TypeScript
+* JavaScript
+* HTML/CSS
 
 ## Built With
 
@@ -40,7 +46,7 @@ ng serve --open
 * [Spotify API](https://developer.spotify.com/documentation/web-api/) - API for music tracks
 * [Node Package Manager](https://www.npmjs.com/) - Dependency Management
 * [Angular CLI](https://github.com/angular/angular-cli) - Angular version 1.6.5.
-
+* [Firebase](https://firebase.google.com/) - Project Hosting
 
 ## Authors
 
@@ -48,8 +54,3 @@ ng serve --open
 * **Krystal Foster** - [Github](https://github.com/eucile)
 * **AJ Mcgladdery** - [Github](https://github.com/amcgladd)
 * **Brendan Shea** - [Github](https://github.com/https://github.com/bjrshea)
-
-
-## License
-
-This project is licensed under the MIT License.
