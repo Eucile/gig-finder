@@ -1,7 +1,6 @@
 <div class="sound-icon">
   <img src="../assets/howl2.png">
 </div>
-
   <div *ngIf="this.showSpin" id="spinner">
   <div id="loader"></div>
 </div>
@@ -26,7 +25,7 @@
         </ul>
 
           <ul class="spotify-box">
-              <li><iframe src="url" width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
+              <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
           </ul>
 
       </div>
