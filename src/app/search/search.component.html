@@ -22,9 +22,9 @@
           <li>{{result.cityName}}
           {{result.regionAbbr}}, {{result.postalCode}}</li>
         </ul>
-        <ul *ngIf="result.exist" class="spotify-box">
-            <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
-        </ul>
+          <ul *ngIf="result.exist" class="spotify-box">
+              <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
+          </ul>
       </div>
     </div>
 </div>
