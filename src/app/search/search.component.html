@@ -26,9 +26,13 @@
           <li>{{result.cityName}}
           {{result.regionAbbr}}, {{result.postalCode}}</li>
 
+
           <li><a href="#"><img src="../assets/ticketmaster.svg"></a></li>
         </ul>
           <ul class="spotify-box">
+
+        </ul>
+          <ul *ngIf="result.exist" class="spotify-box">
               <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
           </ul>
       </div>
