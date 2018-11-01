@@ -4,6 +4,9 @@
   <div *ngIf="this.showSpin" id="spinner">
   <div id="loader"></div>
 </div>
+
+  <div id="rewind" *ngIf="this.showRewind" (click)="exit()"><img class="hvr-pulse" src="../assets/rewind.png" alt=""><span class="go-back">go back</span></div>
+
 <div class="container">
     <div *ngIf="this.showSearch" class="search">
       <input id="locationSearch" type="text" placeholder=" search city . . ."><br>
@@ -17,14 +20,22 @@
         <div class="results">
           <ul>
           <li class="artist-title">{{result.title}}</li>
+          <li class="date-title">{{result.startTime}}</li>
           <li>{{result.name}}</li>
           <li>{{result.artistName}}</li>
           <li>{{result.cityName}}
           {{result.regionAbbr}}, {{result.postalCode}}</li>
+
+
+          <li><a href="#"><img src="../assets/ticketmaster.svg"></a></li>
+        </ul>
+          <ul class="spotify-box">
+
         </ul>
           <ul *ngIf="result.exist" class="spotify-box">
               <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
           </ul>
       </div>
     </div>
+</div>
 </div>

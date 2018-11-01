@@ -25,12 +25,19 @@ export class SearchComponent  {
 
   private showSearch = true;
   private showSpin = false;
+  private showRewind = false;
 
   public getSanitzedUrl(url: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
+
+exit() {
+  window.location.reload();
+}
+
   getConcerts() {
+    this.showRewind = true;
 
     this.location =(<HTMLInputElement> document.getElementById('locationSearch')).value;
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;

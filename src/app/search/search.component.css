@@ -4,6 +4,7 @@
 
 body {
   background-color: #222;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #loader {
@@ -105,7 +106,6 @@ body {
   animation-iteration-count: infinite;
 }
 
-
 #spinner {
   position: absolute;
   width: 900px;
@@ -133,12 +133,12 @@ p {
   margin: 20% auto;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
   box-shadow: 0px 10px 30px rgba(0,0,0, 1.3);
 }
 ::placeholder {
   color: white;
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
   letter-spacing: .1em;
   font-size: 1em;
 }
@@ -169,7 +169,7 @@ p {
 }
 #startDate {
   border-radius: 2px;
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
   background: none;
   font-size: .9em;
   color: #d8d8d8;
@@ -182,7 +182,7 @@ p {
 }
 #endDate {
   border-radius: 2px;
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
   background: none;
   color: #d8d8d8;
   font-size: .9em;
@@ -201,7 +201,7 @@ button {
   color: #d8d8d8;
   line-height: 1;
   padding: 9px 16px 11px;
-  border: none;
+  border: hidden;
   width: 100%;
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
@@ -215,6 +215,10 @@ button #listen {
   background: none;
   border: hidden;
 }
+iframe {
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 1);
+}
 .flex-container {
   width: 100%;
   display: flex;
@@ -227,7 +231,6 @@ button #listen {
 }
 .results {
   border-radius: 5px;
-  font-family: 'Raleway', sans-serif;
   box-shadow: 0px 10px 30px rgba(0,0,0, 1.3);
   background: rgba(0, 0, 0, 0.5);
   color: #d8d8d8;
@@ -235,10 +238,40 @@ button #listen {
   display: flex;
   justify-content: space-between;
 }
+.results img {
+  padding-top: 10px;
+  width: 100px;
+  cursor: pointer;
+}
 li {
   list-style: none;
 }
 
 .artist-title {
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.date-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  border-top: .5px solid #d8d8d8; 
+}
+ #rewind {
+  padding: 1em;
+  color: white;
+  border: hidden;
+  position: absolute;
+  background: none;
+  left: 80%;
+  top: 10%;
+  cursor: crosshair;
+}
+#rewind img {
+  width: 40px;
+}
+.go-back {
+  padding-left: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
 }
