@@ -4,7 +4,6 @@
   <div *ngIf="this.showSpin" id="spinner">
   <div id="loader"></div>
 </div>
-
 <div class="container">
     <div *ngIf="this.showSearch" class="search">
       <input id="locationSearch" type="text" placeholder=" search city . . ."><br>
@@ -23,11 +22,9 @@
           <li>{{result.cityName}}
           {{result.regionAbbr}}, {{result.postalCode}}</li>
         </ul>
-
-          <ul class="spotify-box">
-              <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
-          </ul>
-
+        <ul *ngIf="result.exist" class="spotify-box">
+            <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
+        </ul>
       </div>
     </div>
 </div>
