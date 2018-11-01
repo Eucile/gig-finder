@@ -1,10 +1,11 @@
+![howl-logo](https://imgur.com/a/6LswNH5)
 # Howl
 
 Never miss out on great live music again. Put in your location and time frame, and Howl returns a dynamic list with music from upcoming shows.
 
 ### Prerequisites
 
-You'll need your own API keys for the Tickemaster API available [here](https://developer.ticketmaster.com/)
+You'll need your own API keys for the Ticketmaster API available [here](https://developer.ticketmaster.com/)
 
 
 ### Installing
