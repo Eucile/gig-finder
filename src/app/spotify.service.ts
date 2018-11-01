@@ -14,11 +14,9 @@ export class SpotifyService {
   title: string;
 
 
-  constructor(private http: Http) {
+  constructor(private http: Http) {}
 
-  }
-
-  getToken(){
+  getToken() {
 
     let params = ('grant_type=client_credentials');
 
@@ -31,25 +29,23 @@ export class SpotifyService {
     .map(res=> res.json());
   }
 
-
-  searchMusic(token: string, artist: string){
+  searchMusic(token: string, artist: string) {
 
     this.searchUrl = `https://api.spotify.com/v1/search?query=${artist}&offset=0&limit=1&type=artist`;
     let headers = new Headers();
     headers.append('Authorization' , 'Bearer ' + token);
+
     return this.http.get(this.searchUrl , {headers : headers})
     .map((res: Response) => res.json())
-
-
   }
 
-  searchAlbum(token: string, artistID: string){
+  searchAlbum(token: string, artistID: string) {
+
     this.searchUrl = `https://api.spotify.com/v1/artists/${artistID}/albums`;
     let headers = new Headers();
     headers.append('Authorization' , 'Bearer ' + token);
+
     return this.http.get(this.searchUrl , {headers : headers})
     .map((res: Response) => res.json())
-
-
   }
 }

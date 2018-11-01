@@ -31,12 +31,14 @@ export class SearchComponent  {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
+
 exit() {
   window.location.reload();
 }
 
   getConcerts() {
     this.showRewind = true;
+
     this.location =(<HTMLInputElement> document.getElementById('locationSearch')).value;
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;
     this.startDate = (<HTMLInputElement> document.getElementById('startDate')).value;
@@ -51,7 +53,6 @@ exit() {
         this.dateRange = this.startDate + "00" + "-" + this.endDate + "00";
       }
     }
-    // const test = this.concertService.onClickMe(this.location, this.artist, this.dateRange);
 
     const test = this.concertService.onClickMe(this.location, this.artist, this.startDate, this.endDate);
 
@@ -59,53 +60,34 @@ exit() {
       this.showSpin = false;
       let body = JSON.parse(response.toString());
 
-      // body.events.event.forEach((event, i) => {
-
       body._embedded.events.forEach((events, i) => {
 
-        // this.artistsList.push(
-        //   new Result(event.title, event.venue_address, event.city_name, event.region_abbr, event.postal_code, event.start_time)
-        // );
-
         this.artistsList.push(
-            new Result(events.name, events._embedded.venues[0].name, events._embedded.venues[0].address.line1, events._embedded.venues[0].city.name, events._embedded.venues[0].state.stateCode, events._embedded.attractions[0].name, events.dates.start.localDate, "")
-          );
+          new Result(events.name, events._embedded.venues[0].name, events._embedded.venues[0].address.line1, events._embedded.venues[0].city.name, events._embedded.venues[0].state.stateCode, events._embedded.attractions[0].name, events.start_time, "", false, events.url)
+        );
 
         this.spotifyService.getToken().subscribe(tokenOne => {
           this.spotifyService.searchMusic(tokenOne.access_token, events._embedded.attractions[0].name).subscribe(artistInfo => {
-            this.spotifyService.getToken().subscribe(tokenTwo => {
-              if (artistInfo.artists.items[0] != undefined) {
+            if (artistInfo.artists.items[0] != undefined) {
+              this.spotifyService.getToken().subscribe(tokenTwo => {
                 this.spotifyService.searchAlbum(tokenTwo.access_token, artistInfo.artists.items[0].id).subscribe(artistID => {
 
-                  this.artistsList[i].albumId = "https://open.spotify.com/embed/album/" + artistID.items[0].id;
-
-                 // this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/album/" + artistID.items[0].id);
-
-                  // console.log(this.safeUrl);
-
-                  console.log(this.artistsList[i]);
-
-                  // this.artistsList = artistID.items[0].id;
-                  // console.log(this.artistsList.title)
-
-                  console.log(this.artistsList);
-
+                  if(this.artistsList) {
+                    this.artistsList[i].exist = true;
+                    this.artistsList[i].albumId = "https://open.spotify.com/embed/album/" + artistID.items[0].id;
+                  } else {
+                    this.artistsList[i].exist = false;
+                  }
                 });
-              } else {
-                this.artistsList[i].albumId = 'We did it';
-              }
-            });
+              });
+            } else {
+              this.artistsList[i].albumId = 'null';
+            }
           });
         });
       })
-      // .then(() => {
-      //   console.log(this.albumIDs)
-      // });
-      console.log(this.albumIDs);
     }, function(error) {
       console.log(error)
-
-
     });
   }
 }
