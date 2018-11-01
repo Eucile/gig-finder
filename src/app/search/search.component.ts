@@ -10,6 +10,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./search.component.css'],
   providers: [ConcertService, SpotifyService]
 })
+
 export class SearchComponent  {
   location: string;
   artist: string;

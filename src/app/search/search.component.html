@@ -12,7 +12,7 @@
       <input id="artistSearch" type="text" placeholder=" search artist . . ."><br>
       <p>start date: <input id="startDate" type="date"></p>
       <p>end date: <input id="endDate" type="date"></p>
-      <button id="go" (click)="getConcerts()" (click)="this.showSearch = false" (click)="showSpin()" type="button"><img src="../assets/horns.png"></button>
+      <button class="hvr-pulse" id="go" (click)="getConcerts()" (click)="this.showSearch = false" (click)="showSpin()" type="button"><img src="../assets/horns.png"></button>
     </div>
     <div class="flex-container">
       <div *ngFor="let result of artistsList" class="artist-card">
