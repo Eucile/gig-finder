@@ -18,7 +18,7 @@ export class ConcertService {
 
 
       request.onload = function() {
-      if (this.status === 200) {
+      if (request.status === 200) {
           resolve(request.response);
         } else {
           reject(Error(request.statusText));

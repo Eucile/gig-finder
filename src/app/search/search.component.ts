@@ -31,7 +31,6 @@ export class SearchComponent  {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-
 exit() {
   window.location.reload();
 }
@@ -53,7 +52,7 @@ exit() {
         this.dateRange = this.startDate + "00" + "-" + this.endDate + "00";
       }
     }
-
+    
     const test = this.concertService.onClickMe(this.location, this.artist, this.startDate, this.endDate);
 
     test.then(response => {
@@ -63,7 +62,7 @@ exit() {
       body._embedded.events.forEach((events, i) => {
 
         this.artistsList.push(
-          new Result(events.name, events._embedded.venues[0].name, events._embedded.venues[0].address.line1, events._embedded.venues[0].city.name, events._embedded.venues[0].state.stateCode, events._embedded.attractions[0].name, events.start_time, "", false, events.url)
+          new Result(events.name, events._embedded.venues[0].name, events._embedded.venues[0].address.line1, events._embedded.venues[0].city.name, events._embedded.venues[0].state.stateCode, events._embedded.attractions[0].name, events.dates.start.localDate, "", false, events.url)
         );
 
         this.spotifyService.getToken().subscribe(tokenOne => {
