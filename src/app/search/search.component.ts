@@ -42,17 +42,16 @@ exit() {
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;
     this.startDate = (<HTMLInputElement> document.getElementById('startDate')).value;
     this.endDate = (<HTMLInputElement> document.getElementById('endDate')).value;
-    let dateRange;
-    if(this.endDate != "" ) {
-      this.startDate = this.startDate.split('-').join('');
-      this.endDate = this.endDate.split('-').join('');
-      if (this.endDate == "") {
-        this.dateRange = this.startDate + "00" + "-" + this.startDate + "00";
-      } else {
-        this.dateRange = this.startDate + "00" + "-" + this.endDate + "00";
-      }
-    }
-    
+
+    if(this.startDate != "") {
+    this.startDate = this.startDate + "T10:00:00Z";
+    console.log(this.startDate);
+  }
+   if(this.endDate != "") {
+    this.endDate = this.endDate + "T10:00:00Z";
+    console.log(this.endDate);
+  }
+  
     const test = this.concertService.onClickMe(this.location, this.artist, this.startDate, this.endDate);
 
     test.then(response => {
