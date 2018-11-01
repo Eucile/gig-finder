@@ -30,7 +30,9 @@ export class SearchComponent  {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-
+exit() {
+  window.location.reload();
+}
   getConcerts() {
     this.location =(<HTMLInputElement> document.getElementById('locationSearch')).value;
     this.artist =(<HTMLInputElement> document.getElementById('artistSearch')).value;

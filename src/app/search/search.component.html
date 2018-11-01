@@ -6,6 +6,7 @@
 </div>
 
 <div class="container">
+   <button (click)="exit()">Exit</button>
     <div *ngIf="this.showSearch" class="search">
       <input id="locationSearch" type="text" placeholder=" search city . . ."><br>
       <input id="artistSearch" type="text" placeholder=" search artist . . ."><br>
@@ -27,7 +28,7 @@
           <ul class="spotify-box">
               <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>
           </ul>
-
       </div>
     </div>
+</div>
 </div>
