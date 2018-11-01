@@ -20,10 +20,13 @@
         <div class="results">
           <ul>
           <li class="artist-title">{{result.title}}</li>
+          <li class="date-title">{{result.startTime}}</li>
           <li>{{result.name}}</li>
           <li>{{result.artistName}}</li>
           <li>{{result.cityName}}
           {{result.regionAbbr}}, {{result.postalCode}}</li>
+
+          <li><a href="#"><img src="../assets/ticketmaster.svg"></a></li>
         </ul>
           <ul class="spotify-box">
               <li><iframe [src]=getSanitzedUrl(result.albumId) width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>

@@ -68,7 +68,7 @@ exit() {
         // );
 
         this.artistsList.push(
-            new Result(events.name, events._embedded.venues[0].name, events._embedded.venues[0].address.line1, events._embedded.venues[0].city.name, events._embedded.venues[0].state.stateCode, events._embedded.attractions[0].name, events.start_time, "")
+            new Result(events.name, events._embedded.venues[0].name, events._embedded.venues[0].address.line1, events._embedded.venues[0].city.name, events._embedded.venues[0].state.stateCode, events._embedded.attractions[0].name, events.dates.start.localDate, "")
           );
 
         this.spotifyService.getToken().subscribe(tokenOne => {
