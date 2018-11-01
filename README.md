@@ -1,27 +1,54 @@
-# Concerts
+# Howl
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+Never miss out on great live music again. Put in your location and time frame, and Howl returns a dynamic list with music from upcoming shows.
 
-## Development server
+### Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You'll need your own API keys for the Tickemaster API available [here](https://developer.ticketmaster.com/)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installing
 
-## Build
+Clone this repo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
+git clone ...
+```
 
-## Running unit tests
+navigate to project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+cd ...
+```
 
-## Running end-to-end tests
+install npm
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+npm install
+```
 
-## Further help
+launch project in your in browser
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+ng serve --open
+```
+
+## Built With
+
+* [Ticketmaster API](https://developer.ticketmaster.com/) - API for local events
+* [Spotify API](https://developer.spotify.com/documentation/web-api/) - API for music tracks
+* [Node Package Manager](https://www.npmjs.com/) - Dependency Management
+* [Angular CLI](https://github.com/angular/angular-cli) - Angular version 1.6.5.
+
+
+## Authors
+
+* **Hassan Al-Khalifah** - [Github](https://github.com/hassan-a-alkhalifah)
+* **Krystal Foster** - [Github](https://github.com/eucile)
+* **AJ Mcgladdery** - [Github](https://github.com/amcgladd)
+* **Brendan Shea** - [Github](https://github.com/https://github.com/bjrshea)
+
+
+## License
+
+This project is licensed under the MIT License.
