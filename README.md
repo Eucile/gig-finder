@@ -4,12 +4,14 @@
 
 Never miss out on great live music again. Put in your location and time frame, and Howl returns a dynamic list with music from upcoming shows.
 
+This project is deployed on Firebase:  [https://howl-concert-app.firebaseapp.com/](https://howl-concert-app.firebaseapp.com/)
+
 ### Prerequisites
 
-If Spotify doesn't yield results, you may need to install the latest version of CORS. Please find and download an extension for your browser. 
+If Spotify doesn't yield results, you may need to install the latest version of CORS. Please find and download an extension for your browser.
 
 
-### Installing
+### Installing Locally
 
 Clone this repo
 
