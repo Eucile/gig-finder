@@ -143,7 +143,6 @@ p {
 }
 #locationSearch {
   background: none;
-  border-radius: 5px;
   font-size: .9em;
   color: #d8d8d8;
   margin-bottom: 1em;
@@ -155,7 +154,6 @@ p {
   border-right: none;
 }
 #artistSearch {
-  border-radius: 5px;
   font-size: .9em;
   background: none;
   color: #d8d8d8;
