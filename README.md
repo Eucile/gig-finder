@@ -1,4 +1,4 @@
-# [Howl](https://howl-music.firebaseapp.com/)
+# [Howl](https://howl-concert-app.firebaseapp.com/)
 
 ![howl-logo](https://github.com/Eucile/gig-finder/blob/master/howlreadme.png)
 
@@ -6,7 +6,7 @@ Never miss out on great live music again. Put in your location and time frame, a
 
 ### Prerequisites
 
-You'll need your own API keys for the Ticketmaster API available [here](https://developer.ticketmaster.com/)
+If Spotify doesn't yield results, you may need to install the latest version of CORS. Please find and download an extension for your browser. 
 
 
 ### Installing
